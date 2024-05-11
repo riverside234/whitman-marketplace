@@ -13,7 +13,12 @@ export default function SearchBar(props) {
         value={props.value}
       />
 
-      <Button radius="full" onClick={props.reset}>
+      <Button
+        radius="full"
+        variant="ghost"
+        color="primary"
+        onClick={props.reset}
+      >
         Reset Search
       </Button>
     </div>

@@ -49,7 +49,7 @@ export default async function App({
               radius="full"
               color="primary"
               href="/"
-              variant="flat"
+              variant="ghost"
             >
               Log Out
             </Button>

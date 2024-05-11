@@ -28,7 +28,7 @@ export default function FormItem() {
 
     await saveItems(item);
     revalidatePath("/home");
-    redirect("/home/allItems");
+    redirect("/home/success");
   }
 
   return (

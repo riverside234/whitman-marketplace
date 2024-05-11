@@ -19,52 +19,42 @@
 }
 
 .main {
-  width: 90%;
-  max-width: 75rem;
-  margin: 3rem auto;
-  color: white;
+  margin: 2rem auto;
+  width: 100%;
+  border-radius: 6px;
+  background-color: #03be9f;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
 }
 
 .form {
-  max-width: 50rem;
+  margin-bottom: 0.5rem;
+  flex: 1;
+  min-width: 10rem;
 }
 
 .form label {
   display: block;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-  font-family: "Montserrat", sans-serif;
-  text-transform: uppercase;
-  color: #b3aea5;
   font-weight: bold;
+  margin-bottom: 0.5rem;
+  color: white;
+  text-align: left;
 }
 
 .form input,
 .form textarea {
-  display: block;
-  width: 100%;
-  padding: 0.5rem 1rem;
+  font: inherit;
+  padding: 0.25rem;
   border-radius: 4px;
-  border: 1px solid #454952;
-  background: #716f6a;
-  font-size: 1.25rem;
-  font-family: "Montserrat", sans-serif;
-  color: #ddd6cb;
-}
-
-.form input:focus,
-.form textarea:focus {
-  outline-color: #f99f2a;
-  background-color: #302c29;
+  border: 1px solid #ccc;
+  width: 100%;
+  background-color: #dcfff9;
 }
 
 .row {
   display: flex;
   gap: 1rem;
-}
-
-.row p {
-  width: 100%;
+  flex-wrap: wrap;
 }
 
 .actions {

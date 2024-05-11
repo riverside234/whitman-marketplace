@@ -13,8 +13,8 @@ export default function LoginOrsignup() {
         onValueChange={setIsSelected}
         defaultSelected
         size="lg"
-        color="success"
         className="mt-8"
+        color="warning"
       >
         {isSelected ? "Log in" : "Sign Up"}
       </Switch>

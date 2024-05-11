@@ -9,10 +9,20 @@ import {
   Divider,
 } from "@nextui-org/react";
 import { useState } from "react";
-import deleteIt from "./delete-Item.jsx";
+
 import { useRouter } from "next/navigation";
 
-export default function ItemCard(props) {
+export default function SaveCard(props) {
+  const [imgSrc, setImgSrc] = useState(
+    `https://y-nextjs-demo-users-image.s3.amazonaws.com/${props.item.image}`
+  );
+
+  const handleError = () => {
+    setImgSrc(
+      "https://y-nextjs-demo-users-image.s3.amazonaws.com/sold-out-stamp.png"
+    );
+  };
+
   const [show, setShow] = useState(true);
 
   const handleShow = () => {
@@ -29,8 +39,9 @@ export default function ItemCard(props) {
           removeWrapper
           alt={props.item.item}
           className=" z-0   object-cover"
-          src={`https://y-nextjs-demo-users-image.s3.amazonaws.com/${props.item.image}`}
+          src={imgSrc}
           style={{ width: "32rem", height: "24rem" }}
+          onError={handleError}
         />
 
         {show ? (
@@ -45,35 +56,19 @@ export default function ItemCard(props) {
               More Details
             </Button>
 
-            {props.user.id === props.item.user_id ? (
-              <Button
-                className="text-tiny"
-                radius="full"
-                size="sm"
-                color="danger"
-                onClick={() => {
-                  deleteIt(props.item.id);
+            <Button
+              className="text-tiny"
+              radius="full"
+              size="sm"
+              color="danger"
+              onClick={() => {
+                props.functionCheckUnselect(props.item.id);
 
-                  router.refresh();
-                }}
-              >
-                Delete{" "}
-              </Button>
-            ) : (
-              <Button
-                className="text-tiny"
-                radius="full"
-                size="sm"
-                color="danger"
-                onClick={() => {
-                  props.checkSave(props.item);
-                  router.refresh();
-                }}
-              >
-                {" "}
-                Save
-              </Button>
-            )}
+                router.refresh();
+              }}
+            >
+              Delete{" "}
+            </Button>
           </CardFooter>
         ) : (
           <div>
@@ -109,35 +104,19 @@ export default function ItemCard(props) {
                 Show less
               </Button>
 
-              {props.user.id === props.item.user_id ? (
-                <Button
-                  className="text-tiny"
-                  radius="full"
-                  size="sm"
-                  color="danger"
-                  onClick={() => {
-                    deleteIt(props.item.id);
+              <Button
+                className="text-tiny"
+                radius="full"
+                size="sm"
+                color="danger"
+                onClick={() => {
+                  props.functionCheckUnselect(props.item.id);
 
-                    router.refresh();
-                  }}
-                >
-                  Delete{" "}
-                </Button>
-              ) : (
-                <Button
-                  className="text-tiny"
-                  radius="full"
-                  size="sm"
-                  color="danger"
-                  onClick={() => {
-                    props.checkSave(props.item);
-                    router.refresh();
-                  }}
-                >
-                  {" "}
-                  Save
-                </Button>
-              )}
+                  router.refresh();
+                }}
+              >
+                Delete{" "}
+              </Button>
             </CardFooter>
           </div>
         )}

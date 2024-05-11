@@ -2,7 +2,7 @@
 
 import { redirect } from "next/navigation";
 import { createClient } from "@/utils/supabase/server";
-import ItemsGrid from "@/lib/itemsGrid.jsx";
+import SaveGrid from "./saveGrid";
 
 export default async function allItems() {
   const supabase = createClient();
@@ -12,10 +12,5 @@ export default async function allItems() {
     redirect("/");
   }
 
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-
-  //get item from session Storage
-  return <ItemsGrid user={user} />;
+  return <SaveGrid />;
 }

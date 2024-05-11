@@ -19,6 +19,5 @@ export default async function allItems() {
     data: { user },
   } = await supabase.auth.getUser();
 
-  console.log(items);
   return <ItemsGrid items={items} user={user} />;
 }

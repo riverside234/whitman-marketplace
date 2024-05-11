@@ -2,7 +2,7 @@
 import LoginOrsignup from "./LoginOrsignup";
 import { login, signup } from "./actions";
 import { ArrowDown } from "@phosphor-icons/react/dist/ssr";
-import classes from "../lib/page.module.css";
+import classes from "../lib/form.module.css";
 import { createClient } from "@/utils/supabase/server";
 
 export default async function LoginPage() {
@@ -22,7 +22,7 @@ export default async function LoginPage() {
           <ArrowDown size="40" color="Pink" weight="duotone" />
         </h1>
       </div>
-      <div className="flex flex-col max-w-4xl relative  w-full">
+      <div className="flex flex-col max-w-xl relative  ">
         <main className={classes.main}>
           <form className={classes.form}>
             <div className={classes.row}>
