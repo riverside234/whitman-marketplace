@@ -21,10 +21,12 @@ export default async function App({
         <NavbarBrand>
           <Link color="foreground" href="/home/allItems">
             <AcmeLogo />
-            <p className="font-bold text-inherit">Whitman Marketplace</p>
+            <p className=" hidden sm:flex font-bold text-inherit">
+              Whitman Marketplace
+            </p>
           </Link>
         </NavbarBrand>
-        <NavbarContent className="hidden sm:flex gap-10" justify="center">
+        <NavbarContent className="  sm:flex gap-10" justify="center">
           <NavbarItem>
             <Link color="foreground" href="/home">
               Home
